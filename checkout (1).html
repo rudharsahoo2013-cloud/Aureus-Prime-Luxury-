@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Checkout | Aureus Prime</title><script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="/styles.css"></head>
+<body><header class="site-header"><a class="brand" href="/">AUREUS PRIME</a><nav><a href="/cart.html">Back to cart</a></nav></header>
+<main class="shell"><section class="panel"><h1>Secure Checkout</h1><p id="checkoutNotice" class="notice" aria-live="polite"></p>
+<form id="checkoutForm" class="form">
+<h2>Personal details</h2>
+<label>Full name<input name="fullName" required maxlength="100" autocomplete="name"></label>
+<label>Email<input name="email" type="email" required maxlength="150" autocomplete="email"></label>
+<label>Indian mobile number<input name="phone" type="tel" required pattern="(\+91)?[6-9][0-9]{9}" placeholder="+91 9876543210" autocomplete="tel"></label>
+<h2>Delivery address</h2>
+<label>Full address<textarea name="address" required maxlength="500" autocomplete="street-address"></textarea></label>
+<label>Landmark<input name="landmark" required maxlength="200"></label>
+<label>City<input name="city" required maxlength="100" autocomplete="address-level2"></label>
+<label>State<input name="state" required maxlength="100" autocomplete="address-level1"></label>
+<h2>Coupon</h2>
+<div class="coupon-row"><input id="coupon" placeholder="Enter coupon code"><button id="applyCoupon" type="button" class="outline-button">Apply Coupon</button></div>
+<p id="couponResult" class="muted">Coupon is validated securely when the order is submitted.</p>
+<h2>Payment method</h2>
+<label class="radio"><input type="radio" name="paymentMethod" value="COD" checked> Cash on Delivery</label>
+<label class="radio"><input type="radio" name="paymentMethod" value="UPI"> UPI / Google Pay / PhonePe</label>
+<div id="upiPanel" class="panel" hidden>
+<p>Scan the merchant QR code and pay the final amount shown by the verified payment provider.</p>
+<img src="/assets/images/payment/upi-qr.png" alt="Merchant UPI QR code" class="qr">
+<label>UTR / Transaction Reference Number<input name="utr" maxlength="40" placeholder="Enter transaction reference"></label>
+<p class="muted">UTR submission is not automatic payment confirmation. Your payment will remain unverified until checked by the merchant.</p>
+</div>
+<button class="gold-button" type="submit">Confirm Order</button>
+</form></section></main>
+<script type="module" src="/js/checkout.js"></script></body></html>

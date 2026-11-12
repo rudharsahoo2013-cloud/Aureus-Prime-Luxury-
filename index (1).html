@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Aureus Prime Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="min-h-screen">
+  <main class="shell">
+    <h1 class="brand">AUREUS PRIME <span>ADMIN</span></h1>
+    <p id="adminStatus" class="notice" aria-live="polite"></p>
+    <section id="loginPanel" class="panel">
+      <h2>Administrator sign in</h2>
+      <form id="adminLogin" class="form">
+        <label>Email<input name="email" type="email" required autocomplete="username"></label>
+        <label>Password<input name="password" type="password" required autocomplete="current-password"></label>
+        <button class="gold-button">Sign in</button>
+      </form>
+    </section>
+    <section id="dashboard" class="panel" hidden>
+      <div class="flex-between"><h2>Orders</h2><button id="logout" class="outline-button">Sign out</button></div>
+      <div id="orders"></div>
+    </section>
+  </main>
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>
